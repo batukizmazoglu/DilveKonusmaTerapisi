@@ -8,8 +8,8 @@ export async function POST(request) {
     const { name, email, subject, message } = await request.json();
 
     const msg = {
-      to: process.env.ADMIN_EMAIL,
-      from: process.env.SENDGRID_FROM_EMAIL,
+      to: 'batukl89@gmail.com',
+      from: process.env.SENDGRID_FROM_EMAIL || 'batukl89@gmail.com',
       subject: `Yeni İletişim Formu: ${subject}`,
       text: `Ad Soyad: ${name}\nE-posta: ${email}\nMesaj: ${message}`,
       html: `
