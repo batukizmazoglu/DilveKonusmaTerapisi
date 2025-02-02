@@ -7,6 +7,13 @@
 :root {
   --background: #ffffff;
   --foreground: #212529;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,6 +27,24 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Inter', sans-serif;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+}
+
+/* Mobil dokunmatik elemanlar için minimum dokunma alanı */
+button, 
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Mobil için scroll davranışını iyileştirme */
+* {
+  -webkit-overflow-scrolling: touch;
 }
 
 @layer base {
@@ -42,15 +67,15 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white transition-all duration-200 rounded-xl bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-soft;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white transition-all duration-200 rounded-xl bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-soft active:scale-95 touch-manipulation;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium transition-all duration-200 rounded-xl text-primary-700 bg-primary-50 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium transition-all duration-200 rounded-xl text-primary-700 bg-primary-50 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 active:scale-95 touch-manipulation;
   }
   
   .input-field {
-    @apply block w-full px-4 py-3 mt-1 text-gray-900 placeholder-gray-500 transition-all duration-200 border-gray-300 rounded-xl shadow-sm focus:ring-primary-500 focus:border-primary-500;
+    @apply block w-full px-4 py-3 mt-1 text-gray-900 placeholder-gray-500 transition-all duration-200 border-gray-300 rounded-xl shadow-sm focus:ring-primary-500 focus:border-primary-500 touch-manipulation;
   }
   
   .form-label {
@@ -58,7 +83,7 @@ body {
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-soft p-6 transition-all duration-200 hover:shadow-lg;
+    @apply bg-white rounded-xl shadow-soft p-4 sm:p-6 transition-all duration-200 hover:shadow-lg touch-manipulation;
   }
 
   .section {
@@ -66,6 +91,74 @@ body {
   }
 
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full overflow-hidden;
+  }
+}
+
+/* Mobil cihazlarda metin seçimini devre dışı bırakma */
+@media (max-width: 768px) {
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* iOS için özel stil düzenlemeleri */
+@supports (-webkit-touch-callout: none) {
+  .ios-height-fix {
+    height: -webkit-fill-available;
+  }
+  
+  /* iOS'ta güvenli alan için padding */
+  .ios-safe-area {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* iOS'ta dokunma geri bildirimi iyileştirmeleri */
+  a, button, [role="button"] {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    cursor: pointer;
+  }
+
+  /* iOS'ta momentum scroll */
+  .ios-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+
+  /* iOS'ta input elementleri için zoom önleme */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search"],
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Mobil için gelişmiş dokunma hedefi boyutları */
+@media (max-width: 768px) {
+  a, button, [role="button"], 
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Mobil menü öğeleri için özel stil */
+  .mobile-menu-item {
+    padding: 12px 16px;
+    margin: 4px 0;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
   }
 }
