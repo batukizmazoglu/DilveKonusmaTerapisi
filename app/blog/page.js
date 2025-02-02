@@ -1,65 +1,119 @@
-import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
+// Örnek blog gönderileri
 const blogPosts = [
   {
     id: 1,
-    title: 'Anksiyete ile Başa Çıkma Yöntemleri',
-    summary: 'Günlük hayatta anksiyete ile başa çıkmanın etkili yolları ve pratik öneriler.',
-    date: '15 Şubat 2024',
-    readTime: '5 dakika',
-    image: '/images/anxiety.jpg'
+    title: 'Çocuklarda Dil Gelişimi: Ebeveynler İçin Rehber',
+    excerpt: 'Çocuğunuzun dil gelişimini desteklemek için yapabileceğiniz aktiviteler ve öneriler...',
+    date: '15 Ocak 2024',
+    category: 'Çocuk Gelişimi',
+    imageUrl: '/images/blog/child-development.jpg',
+    slug: 'cocuklarda-dil-gelisimi'
   },
   {
     id: 2,
-    title: 'Sağlıklı İlişki Nasıl Kurulur?',
-    summary: 'İlişkilerde güven, iletişim ve empati becerilerini geliştirmenin yolları.',
-    date: '10 Şubat 2024',
-    readTime: '7 dakika',
-    image: '/images/relationships.jpg'
+    title: 'Kekemelik Hakkında Bilinmesi Gerekenler',
+    excerpt: 'Kekemelik nedir, nedenleri nelerdir ve nasıl tedavi edilir? Detaylı bir bakış...',
+    date: '10 Ocak 2024',
+    category: 'Kekemelik',
+    imageUrl: '/images/blog/stuttering.jpg',
+    slug: 'kekemelik-hakkinda'
   },
   {
     id: 3,
-    title: 'Depresyonla Mücadele',
-    summary: 'Depresyonun belirtileri, tedavi yöntemleri ve destek alma yolları hakkında bilgiler.',
-    date: '5 Şubat 2024',
-    readTime: '6 dakika',
-    image: '/images/depression.jpg'
-  },
-  {
-    id: 4,
-    title: 'Stres Yönetimi Teknikleri',
-    summary: 'Modern hayatta stresi azaltmanın ve daha dengeli bir yaşam kurmanın ipuçları.',
-    date: '1 Şubat 2024',
-    readTime: '4 dakika',
-    image: '/images/stress.jpg'
+    title: 'Ses Terapisi: Sesinizi Koruma Rehberi',
+    excerpt: 'Profesyonel ses kullanıcıları için ses sağlığını koruma yöntemleri...',
+    date: '5 Ocak 2024',
+    category: 'Ses Sağlığı',
+    imageUrl: '/images/blog/voice-therapy.jpg',
+    slug: 'ses-terapisi-rehberi'
   }
 ];
 
 export default function BlogPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center mb-12">Blog</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {blogPosts.map((post) => (
-          <div key={post.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-            <div className="h-48 bg-gray-200">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
-              <p className="text-gray-600 mb-4">{post.summary}</p>
-              <div className="flex justify-between items-center text-sm text-gray-500">
-                <span>{post.date}</span>
-                <span>{post.readTime} okuma</span>
-              </div>
-            </div>
+    <main className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="section bg-white border-b">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-6">
+              Blog
+            </h1>
+            <p className="text-xl text-gray-600">
+              Dil ve konuşma terapisi hakkında güncel bilgiler, öneriler ve profesyonel görüşler
+            </p>
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      </section>
+
+      {/* Blog Posts Grid */}
+      <section className="section">
+        <div className="container">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post) => (
+              <article key={post.id} className="bg-white rounded-xl shadow-soft overflow-hidden">
+                <Link href={`/blog/${post.slug}`} className="block">
+                  <div className="relative h-48">
+                    <Image
+                      src={post.imageUrl}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="text-sm text-primary-600 font-medium">
+                        {post.category}
+                      </span>
+                      <span className="text-sm text-gray-500">
+                        {post.date}
+                      </span>
+                    </div>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-2 hover:text-primary-600 transition-colors">
+                      {post.title}
+                    </h2>
+                    <p className="text-gray-600">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="section bg-primary-50">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Güncel Bilgilerden Haberdar Olun
+            </h2>
+            <p className="text-gray-600 mb-8">
+              E-bültenimize kayıt olarak dil ve konuşma terapisi alanındaki son gelişmelerden haberdar olun.
+            </p>
+            <form className="flex gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="E-posta adresiniz"
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                required
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                Abone Ol
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 } 

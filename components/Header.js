@@ -10,6 +10,7 @@ export default function Header() {
     { href: '/', label: 'Ana Sayfa' },
     { href: '/hakkimda', label: 'Hakkımda' },
     { href: '/hizmetler', label: 'Hizmetler' },
+    { href: '/basari-hikayeleri', label: 'Başarı Hikayeleri' },
     { href: '/blog', label: 'Blog' },
     { href: '/iletisim', label: 'İletişim' },
   ];
