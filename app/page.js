@@ -6,7 +6,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import WhatsAppCallButton from '../components/WhatsAppCallButton';
 import SocialMedia from '../components/SocialMedia';
 import { motion } from 'framer-motion';
-import FAQ from '../components/FAQ';
+import FAQ from './components/FAQ';
 
 export default function Home() {
   const services = [
@@ -258,6 +258,9 @@ export default function Home() {
             </div>
           </section>
 
+          {/* SSS Bölümü */}
+          <FAQ />
+
           {/* CTA Section */}
           <section className="section bg-secondary-50">
             <div className="container">
@@ -280,9 +283,6 @@ export default function Home() {
               </div>
             </div>
           </section>
-
-          {/* SSS bölümü */}
-          <FAQ />
 
           {/* Öne Çıkan Blog Yazıları */}
           <section className="section bg-white">

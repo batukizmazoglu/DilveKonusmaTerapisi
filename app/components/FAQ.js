@@ -9,16 +9,16 @@ export default function FAQ() {
 
   const faqData = [
     {
-      question: "Dil ve konuşma terapisi seansları ne kadar sürüyor?",
-      answer: "Her seans yaklaşık 45-60 dakika sürmektedir. Seanslar genellikle haftada 1-2 kez olacak şekilde planlanır ve kişinin ihtiyaçlarına göre düzenlenir."
+      question: "Dil ve konuşma terapisi nedir?",
+      answer: "Dil ve konuşma terapisi, iletişim bozukluklarının teşhis ve tedavisi için uygulanan bir sağlık hizmetidir. Her yaş grubunda görülebilen konuşma, dil, ses ve yutma bozukluklarının değerlendirilmesi ve tedavisini kapsar."
     },
     {
-      question: "Hangi yaş gruplarına hizmet veriyorsunuz?",
-      answer: "2 yaş ve üzeri tüm yaş gruplarına hizmet veriyoruz. Çocuklarda dil gelişimi, artikülasyon ve kekemelik; yetişkinlerde ses bozuklukları ve afazi gibi alanlarda uzmanlaşmış durumdayız."
+      question: "Hangi durumlarda dil ve konuşma terapisine ihtiyaç duyulur?",
+      answer: "Gecikmiş dil gelişimi, artikülasyon bozuklukları, kekemelik, ses bozuklukları, afazi, yutma güçlüğü, otizm spektrum bozukluğu kaynaklı iletişim sorunları gibi durumlarda dil ve konuşma terapisine ihtiyaç duyulabilir."
     },
     {
-      question: "Online terapi hizmeti veriyor musunuz?",
-      answer: "Evet, uygun vakalarda online terapi seansları düzenliyoruz. Özellikle takip seansları ve belirli terapi yöntemleri için online terapi etkili bir seçenek olabilir."
+      question: "Terapi süreci nasıl işler?",
+      answer: "İlk görüşmede detaylı bir değerlendirme yapılır ve kişiye özel bir terapi planı oluşturulur. Seanslar genellikle haftada 1-2 kez, 45-60 dakika sürer. Terapi süresi, sorunun türüne ve kişinin ilerlemesine bağlı olarak değişiklik gösterir."
     }
   ];
 
@@ -34,7 +34,7 @@ export default function FAQ() {
             Sıkça Sorulan Sorular
           </h2>
           <p className="mt-4 text-[#0D0D0D]/70">
-            En çok merak edilen konular
+            En çok merak edilen konular hakkında bilgi alın
           </p>
         </div>
 
@@ -42,8 +42,9 @@ export default function FAQ() {
           {faqData.map((faq, index) => (
             <motion.div
               key={index}
-              initial={false}
-              animate={{ backgroundColor: openQuestion === index ? 'rgb(249, 250, 251)' : 'white' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
               className="bg-white rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 border border-[#B3BF88]/20 overflow-hidden"
             >
               <button
@@ -84,13 +85,13 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-12">
           <Link 
             href="/sss" 
-            className="inline-flex items-center px-6 py-3 rounded-full bg-[#96A65B] text-white hover:bg-[#B3BF88] transition-colors duration-300"
+            className="inline-flex items-center px-8 py-4 rounded-full bg-[#96A65B] text-white hover:bg-[#B3BF88] transition-colors duration-300 shadow-md hover:shadow-lg"
           >
-            Tüm Soruları Gör
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span>Tüm Soruları Görüntüle</span>
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
             </svg>
           </Link>
