@@ -6,8 +6,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import WhatsAppCallButton from '../components/WhatsAppCallButton';
 import SocialMedia from '../components/SocialMedia';
 import { motion } from 'framer-motion';
-import Breadcrumb from '@/components/Breadcrumb';
-import FAQ from '@/components/FAQ';
+import FAQ from '../components/FAQ';
 
 export default function Home() {
   const services = [
@@ -48,14 +47,47 @@ export default function Home() {
 
   const socialLinks = {
     facebook: 'https://facebook.com/talyadkt',
-    instagram: 'https://instagram.com/talyadkt',
-    twitter: 'https://twitter.com/talyadkt',
-    youtube: 'https://youtube.com/talyadkt',
+    instagram: 'https://instagram.com/talyadkt'
   };
+
+  const blogPosts = [
+    {
+      id: 1,
+      title: 'Çocuklarda Dil Gelişimi: Ebeveynler İçin Rehber',
+      excerpt: 'Çocuğunuzun dil gelişimini desteklemek için yapabileceğiniz aktiviteler ve öneriler...',
+      date: '15 Ocak 2024',
+      category: 'Çocuk Gelişimi',
+      imageUrl: '/images/blog/child-development.jpg',
+      slug: 'cocuklarda-dil-gelisimi',
+      icon: '👶',
+      readTime: '5 dk okuma'
+    },
+    {
+      id: 2,
+      title: 'Kekemelik Hakkında Bilinmesi Gerekenler',
+      excerpt: 'Kekemelik nedir, nedenleri nelerdir ve nasıl tedavi edilir? Detaylı bir bakış...',
+      date: '10 Ocak 2024',
+      category: 'Kekemelik',
+      imageUrl: '/images/blog/stuttering.jpg',
+      slug: 'kekemelik-hakkinda',
+      icon: '🗣️',
+      readTime: '7 dk okuma'
+    },
+    {
+      id: 3,
+      title: 'Ses Terapisi: Sesinizi Koruma Rehberi',
+      excerpt: 'Profesyonel ses kullanıcıları için ses sağlığını koruma yöntemleri...',
+      date: '5 Ocak 2024',
+      category: 'Ses Sağlığı',
+      imageUrl: '/images/blog/voice-therapy.jpg',
+      slug: 'ses-terapisi-rehberi',
+      icon: '🎤',
+      readTime: '6 dk okuma'
+    }
+  ];
 
   return (
     <>
-      <Breadcrumb />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -81,6 +113,42 @@ export default function Home() {
                   />
                   <Link href="/hizmetler" className="btn-secondary">
                     Hizmetlerimiz
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* About Section */}
+          <section className="section bg-white">
+            <div className="container">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="relative aspect-square w-full max-w-md mx-auto">
+                  <Image
+                    src="/images/profile.jpg"
+                    alt="Uzman Dil ve Konuşma Terapisti"
+                    fill
+                    className="object-cover rounded-lg shadow-lg"
+                    priority
+                  />
+                </div>
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-bold text-gray-900">
+                    Merhaba, Ben Uzm. DKT Talya
+                  </h2>
+                  <div className="prose text-gray-600">
+                    <p>
+                      Hacettepe Üniversitesi Dil ve Konuşma Terapisi bölümünden mezun olduktan sonra, çocuk ve yetişkinlerde görülen dil, konuşma ve yutma bozuklukları üzerine uzmanlaştım. 5 yılı aşkın klinik deneyimimle, her vakaya özel yaklaşım geliştirerek en etkili terapi yöntemlerini uyguluyorum.
+                    </p>
+                    <p>
+                      Özellikle pediatrik dil ve konuşma bozuklukları alanında uzmanlaşmış olmakla birlikte, yetişkinlerde görülen ses bozuklukları ve yutma problemleri konusunda da kapsamlı tedavi hizmetleri sunmaktayım.
+                    </p>
+                  </div>
+                  <Link href="/hakkimda" className="btn-secondary inline-flex items-center">
+                    Daha Fazlası
+                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
                   </Link>
                 </div>
               </div>
@@ -113,6 +181,46 @@ export default function Home() {
                     </p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Neden Biz Section */}
+          <section className="section bg-gradient-to-b from-white to-gray-50">
+            <div className="container">
+              <div className="text-center max-w-3xl mx-auto">
+                <h2 className="text-gray-900">
+                  Neden Biz?
+                </h2>
+                <p className="mt-4 text-gray-600">
+                  Size özel, bilimsel ve etkili terapi yaklaşımımız
+                </p>
+              </div>
+
+              <div className="mt-12 grid gap-8 sm:grid-cols-2">
+                <div className="card group hover:-translate-y-1 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <span className="text-2xl text-primary-600 mr-3">✔️</span>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      Bireyselleştirilmiş Terapi Programları
+                    </h3>
+                  </div>
+                  <p className="text-gray-600">
+                    Her danışanımız için özel olarak tasarlanmış, kişiye özgü terapi planları oluşturuyoruz.
+                  </p>
+                </div>
+
+                <div className="card group hover:-translate-y-1 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <span className="text-2xl text-primary-600 mr-3">✔️</span>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      Bilimsel Yaklaşım
+                    </h3>
+                  </div>
+                  <p className="text-gray-600">
+                    Güncel bilimsel araştırmalara dayalı, kanıta dayalı terapi yöntemleri uyguluyoruz.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -173,6 +281,83 @@ export default function Home() {
             </div>
           </section>
 
+          {/* SSS bölümü */}
+          <FAQ />
+
+          {/* Öne Çıkan Blog Yazıları */}
+          <section className="section bg-white">
+            <div className="container">
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <h2 className="text-gray-900">
+                  Blog'dan Öne Çıkanlar
+                </h2>
+                <p className="mt-4 text-gray-600">
+                  En son paylaşılan yazılarımız
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {blogPosts.slice(0, 3).map((post) => (
+                  <motion.article
+                    key={post.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 border border-primary-100 overflow-hidden"
+                  >
+                    <Link href={`/blog/${post.slug}`}>
+                      <div className="relative h-48 overflow-hidden">
+                        <Image
+                          src={post.imageUrl}
+                          alt={post.title}
+                          fill
+                          className="object-cover transform hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="p-6 space-y-4">
+                        <div className="flex items-center justify-between">
+                          <span className="inline-flex items-center gap-2 text-sm font-medium text-primary-600 bg-primary-50 px-3 py-1.5 rounded-full">
+                            {post.icon} {post.category}
+                          </span>
+                          <span className="text-sm text-gray-500">
+                            {post.readTime}
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-600 line-clamp-3">
+                          {post.excerpt}
+                        </p>
+                        <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                          <span className="text-sm text-gray-500">
+                            {post.date}
+                          </span>
+                          <span className="text-primary-600 font-medium hover:translate-x-1 transition-transform duration-300 inline-flex items-center">
+                            Devamını Oku
+                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.article>
+                ))}
+              </div>
+
+              <div className="text-center mt-12">
+                <Link href="/blog" className="btn-secondary inline-flex items-center">
+                  Tüm Yazıları Gör
+                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Sosyal Medya Bölümü */}
           <section className="py-12">
             <div className="container mx-auto px-4">
               <div className="mt-8 text-center">
@@ -185,9 +370,6 @@ export default function Home() {
           </section>
 
           <WhatsAppButton phoneNumber="+905555555555" message="Merhaba, bilgi almak istiyorum." />
-
-          {/* SSS bölümü */}
-          <FAQ />
         </main>
       </motion.div>
     </>
