@@ -15,12 +15,13 @@ const inter = Inter({
 export const metadata = {
   title: 'Dil ve Konuşma Terapisi',
   description: 'Uzman dil ve konuşma terapisti ile profesyonel terapi hizmetleri',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    viewportFit: 'cover',
-  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }) {
