@@ -5,8 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #212529;
+  --primary: #96A65B;
+  --primary-light: #B3BF88;
+  --accent: #F2D43D;
+  --background: #F2F2F2;
+  --text: #0D0D0D;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
@@ -18,8 +21,8 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #212529;
-    --foreground: #ffffff;
+    --background: #E8E9EB;
+    --foreground: #2C3E50;
   }
 }
 
@@ -48,50 +51,88 @@ textarea {
 }
 
 @layer base {
+  /* Başlıklar için tutarlı stil */
+  h1, h2, h3, h4 {
+    @apply text-[#96A65B] font-bold;
+  }
   h1 {
-    @apply font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl;
+    @apply font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-primary-700 mb-6;
   }
   h2 {
-    @apply font-display text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl;
+    @apply font-display text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl text-primary-600 mb-5;
   }
   h3 {
-    @apply font-display text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl;
+    @apply font-display text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl text-primary-500 mb-4;
   }
   h4 {
-    @apply font-display text-xl font-bold tracking-tight md:text-2xl lg:text-3xl;
+    @apply font-display text-xl font-bold tracking-tight md:text-2xl lg:text-3xl text-primary-400 mb-3;
   }
+  /* Paragraf stilleri */
   p {
-    @apply text-base leading-relaxed text-gray-600 md:text-lg;
+    @apply text-base leading-relaxed text-secondary-700 md:text-lg mb-4;
+  }
+  /* Link stilleri */
+  a {
+    @apply text-accent-500 hover:text-accent-600 transition-colors duration-200;
+  }
+  body {
+    @apply bg-[#F2F2F2] text-[#0D0D0D];
   }
 }
 
 @layer components {
+  /* Ana buton */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white transition-all duration-200 rounded-xl bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-soft active:scale-95 touch-manipulation;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white transition-all duration-200 rounded-xl bg-[#96A65B] hover:bg-[#B3BF88] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#96A65B] shadow-soft active:scale-95;
   }
   
+  /* İkincil buton */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium transition-all duration-200 rounded-xl text-primary-700 bg-primary-50 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 active:scale-95 touch-manipulation;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium transition-all duration-200 rounded-xl text-[#0D0D0D] bg-[#F2F2F2] hover:bg-[#B3BF88] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B3BF88] active:scale-95;
   }
   
+  /* Vurgu buton */
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-[#0D0D0D] transition-all duration-200 rounded-xl bg-[#F2D43D] hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F2D43D] shadow-soft active:scale-95;
+  }
+  
+  /* Form elemanları */
   .input-field {
-    @apply block w-full px-4 py-3 mt-1 text-gray-900 placeholder-gray-500 transition-all duration-200 border-gray-300 rounded-xl shadow-sm focus:ring-primary-500 focus:border-primary-500 touch-manipulation;
+    @apply block w-full px-4 py-3 mt-1 text-secondary-900 placeholder-secondary-400 transition-all duration-200 border-secondary-200 rounded-xl shadow-sm focus:ring-primary-400 focus:border-primary-400 touch-manipulation;
   }
   
   .form-label {
-    @apply block text-sm font-medium text-gray-700 mb-1;
+    @apply block text-sm font-medium text-secondary-700 mb-1;
   }
 
+  /* Kartlar */
   .card {
-    @apply bg-white rounded-xl shadow-soft p-4 sm:p-6 transition-all duration-200 hover:shadow-lg touch-manipulation;
+    @apply bg-white rounded-xl shadow-soft p-6 transition-all duration-200 hover:shadow-lg border border-[#B3BF88]/20;
   }
 
+  /* Bölümler */
   .section {
-    @apply py-16 md:py-24;
+    @apply py-16 md:py-24 bg-gradient-to-b from-[#F2F2F2] to-[#B3BF88]/10;
   }
 
+  /* Konteynır */
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full overflow-hidden;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+
+  /* Liste öğeleri */
+  .list-item {
+    @apply flex items-center space-x-3 text-secondary-700 mb-2;
+  }
+
+  /* Özellik kartları */
+  .feature-card {
+    @apply card hover:scale-105 transition-transform duration-200;
+  }
+
+  /* Hizmet kartları */
+  .service-card {
+    @apply card hover:-translate-y-1 transition-transform duration-200;
   }
 }
 

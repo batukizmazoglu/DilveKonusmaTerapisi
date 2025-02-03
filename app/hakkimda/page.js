@@ -6,19 +6,19 @@ import AnimatedSection from '../components/AnimatedSection';
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#F2F2F2]">
       {/* Hero Section */}
-      <section className="section bg-gradient-to-b from-primary-50 to-white">
+      <section className="section bg-gradient-to-b from-[#B3BF88]/20 to-[#F2F2F2]">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="text-4xl font-bold text-gray-900">
+              <h1 className="text-4xl font-bold text-[#0D0D0D]">
                 Uzm. Dkt. [İsim Soyisim]
               </h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-[#96A65B]">
                 Dil ve Konuşma Terapisti
               </p>
-              <p className="text-gray-600">
+              <p className="text-[#0D0D0D]">
                 10 yılı aşkın klinik deneyimimle, dil ve konuşma terapisi alanında uzmanlaşmış bir terapistim. 
                 Çocuklar ve yetişkinlerle çalışarak, her hastanın benzersiz ihtiyaçlarına özel çözümler üretiyorum.
               </p>
@@ -37,46 +37,46 @@ export default function About() {
       </section>
 
       {/* Eğitim ve Deneyim */}
-      <section className="section bg-white">
+      <section className="py-16 bg-white">
         <div className="container">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12">Eğitim ve Deneyim</h2>
+          <h2 className="text-3xl font-bold text-[#96A65B] mb-12">Eğitim ve Deneyim</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <h3 className="text-2xl font-semibold text-gray-900">Eğitim</h3>
+              <h3 className="text-2xl font-semibold text-[#96A65B]">Eğitim</h3>
               <ul className="space-y-6">
                 <li className="flex gap-4">
-                  <div className="flex-shrink-0 w-1 bg-primary-600"></div>
+                  <div className="flex-shrink-0 w-1 bg-[#B3BF88]"></div>
                   <div>
-                    <h4 className="font-medium text-gray-900">Yüksek Lisans - Dil ve Konuşma Terapisi</h4>
-                    <p className="text-gray-600">[Üniversite Adı], 20XX-20XX</p>
+                    <h4 className="font-medium text-[#0D0D0D]">Yüksek Lisans - Dil ve Konuşma Terapisi</h4>
+                    <p className="text-[#0D0D0D]/70">[Üniversite Adı], 20XX-20XX</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <div className="flex-shrink-0 w-1 bg-primary-600"></div>
+                  <div className="flex-shrink-0 w-1 bg-[#B3BF88]"></div>
                   <div>
-                    <h4 className="font-medium text-gray-900">Lisans - Dil ve Konuşma Terapisi</h4>
-                    <p className="text-gray-600">[Üniversite Adı], 20XX-20XX</p>
+                    <h4 className="font-medium text-[#0D0D0D]">Lisans - Dil ve Konuşma Terapisi</h4>
+                    <p className="text-[#0D0D0D]/70">[Üniversite Adı], 20XX-20XX</p>
                   </div>
                 </li>
               </ul>
             </div>
             <div className="space-y-8">
-              <h3 className="text-2xl font-semibold text-gray-900">Deneyim</h3>
+              <h3 className="text-2xl font-semibold text-[#96A65B]">Deneyim</h3>
               <ul className="space-y-6">
                 <li className="flex gap-4">
-                  <div className="flex-shrink-0 w-1 bg-primary-600"></div>
+                  <div className="flex-shrink-0 w-1 bg-[#B3BF88]"></div>
                   <div>
-                    <h4 className="font-medium text-gray-900">Özel Klinik</h4>
-                    <p className="text-gray-600">20XX - Günümüz</p>
-                    <p className="text-gray-600">Dil ve konuşma terapisti olarak bireysel ve grup terapileri</p>
+                    <h4 className="font-medium text-[#0D0D0D]">Özel Klinik</h4>
+                    <p className="text-[#0D0D0D]/70">20XX - Günümüz</p>
+                    <p className="text-[#0D0D0D]/70">Dil ve konuşma terapisti olarak bireysel ve grup terapileri</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <div className="flex-shrink-0 w-1 bg-primary-600"></div>
+                  <div className="flex-shrink-0 w-1 bg-[#B3BF88]"></div>
                   <div>
-                    <h4 className="font-medium text-gray-900">[Hastane/Klinik Adı]</h4>
-                    <p className="text-gray-600">20XX - 20XX</p>
-                    <p className="text-gray-600">Klinik dil ve konuşma terapisti</p>
+                    <h4 className="font-medium text-[#0D0D0D]">[Hastane/Klinik Adı]</h4>
+                    <p className="text-[#0D0D0D]/70">20XX - 20XX</p>
+                    <p className="text-[#0D0D0D]/70">Klinik dil ve konuşma terapisti</p>
                   </div>
                 </li>
               </ul>
@@ -86,31 +86,31 @@ export default function About() {
       </section>
 
       {/* Sertifikalar ve Eğitimler */}
-      <section className="section bg-gray-50">
+      <section className="py-16 bg-[#F2F2F2]">
         <div className="container">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12">Sertifikalar ve Uzmanlık Alanları</h2>
+          <h2 className="text-3xl font-bold text-[#96A65B] mb-12">Sertifikalar ve Uzmanlık Alanları</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Sertifika kartları */}
-            <div className="bg-white p-6 rounded-xl shadow-soft">
+            <div className="bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-shadow duration-300 border border-[#B3BF88]/20">
               <div className="text-4xl mb-4">📜</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-[#96A65B] mb-2">
                 [Sertifika Adı]
               </h3>
-              <p className="text-gray-600">[Veren Kurum], 20XX</p>
+              <p className="text-[#0D0D0D]/70">[Veren Kurum], 20XX</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-soft">
+            <div className="bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-shadow duration-300 border border-[#B3BF88]/20">
               <div className="text-4xl mb-4">🎓</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-[#96A65B] mb-2">
                 [Sertifika Adı]
               </h3>
-              <p className="text-gray-600">[Veren Kurum], 20XX</p>
+              <p className="text-[#0D0D0D]/70">[Veren Kurum], 20XX</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-soft">
+            <div className="bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-shadow duration-300 border border-[#B3BF88]/20">
               <div className="text-4xl mb-4">⭐</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-[#96A65B] mb-2">
                 [Sertifika Adı]
               </h3>
-              <p className="text-gray-600">[Veren Kurum], 20XX</p>
+              <p className="text-[#0D0D0D]/70">[Veren Kurum], 20XX</p>
             </div>
           </div>
         </div>

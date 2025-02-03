@@ -151,14 +151,14 @@ export default function Home() {
           </section>
 
           {/* CTA Section */}
-          <section className="section bg-primary-600">
+          <section className="section bg-secondary-50">
             <div className="container">
               <div className="lg:flex lg:items-center lg:justify-between">
                 <div className="max-w-xl">
-                  <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                  <h2 className="text-3xl font-bold tracking-tight text-primary-700 sm:text-4xl">
                     Profesyonel Yardıma mı İhtiyacınız Var?
                   </h2>
-                  <p className="mt-3 text-lg text-primary-100">
+                  <p className="mt-3 text-lg text-secondary-700">
                     Hemen WhatsApp üzerinden iletişime geçin.
                   </p>
                 </div>
@@ -166,7 +166,7 @@ export default function Home() {
                   <WhatsAppCallButton 
                     phoneNumber="+905555555555"
                     message="Merhaba, bilgi almak istiyorum."
-                    className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-primary-600 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-600 focus:ring-white transition-all duration-200 shadow-soft"
+                    className="btn-primary"
                   />
                 </div>
               </div>
