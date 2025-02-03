@@ -62,14 +62,21 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="sm:hidden">
-            <div className="pt-2 pb-3 space-y-1">
+            <div 
+              className="pt-2 pb-3 space-y-1"
+              style={{
+                willChange: 'transform, opacity',
+                minHeight: '44px'
+              }}
+            >
               {menuItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block w-full px-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors duration-200 touch-manipulation min-h-[44px] flex items-center"
+                  className="block w-full px-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors duration-200 touch-manipulation"
                   onClick={() => setIsMenuOpen(false)}
                   role="menuitem"
+                  style={{ minHeight: '44px' }}
                 >
                   {item.label}
                 </Link>

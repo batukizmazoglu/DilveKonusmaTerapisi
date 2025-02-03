@@ -6,16 +6,37 @@ import ClientLayout from './ClientLayout';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+});
 
 export const metadata = {
   title: 'Dil ve Konuşma Terapisi',
   description: 'Uzman dil ve konuşma terapisti ile profesyonel terapi hizmetleri',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    viewportFit: 'cover',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
+      <head>
+        <link
+          rel="preload"
+          href={inter.url}
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={inter.className}>
         <Header />
         <main>{children}</main>

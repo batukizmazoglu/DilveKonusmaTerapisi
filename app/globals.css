@@ -30,6 +30,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Inter', sans-serif;
+  min-height: 100vh;
   min-height: -webkit-fill-available;
   overflow-x: hidden;
 }
@@ -39,15 +40,24 @@ button,
 a,
 input,
 select,
-textarea {
+textarea,
+[role="button"],
+[type="button"],
+[type="submit"],
+[type="reset"] {
   touch-action: manipulation;
   min-height: 44px;
   min-width: 44px;
+  padding: 8px;
+  margin: 2px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Mobil için scroll davranışını iyileştirme */
 * {
   -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @layer base {
@@ -142,12 +152,49 @@ textarea {
     -webkit-user-select: none;
     user-select: none;
   }
+
+  /* Mobil için gelişmiş dokunma hedefi ayarları */
+  a, 
+  button, 
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  .interactive-element {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+    position: relative;
+  }
+
+  /* Dokunma geri bildirimi için aktif durum */
+  .interactive-element:active {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
 }
 
 /* iOS için özel stil düzenlemeleri */
 @supports (-webkit-touch-callout: none) {
-  .ios-height-fix {
+  html {
     height: -webkit-fill-available;
+  }
+  
+  body {
+    min-height: -webkit-fill-available;
+  }
+
+  .full-height {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+  
+  .min-full-height {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
   
   /* iOS'ta güvenli alan için padding */
@@ -171,35 +218,17 @@ textarea {
     overflow-y: auto;
   }
 
-  /* iOS'ta input elementleri için zoom önleme */
+  /* iOS'ta input zoom engellemesi */
   input[type="text"],
   input[type="email"],
-  input[type="tel"],
   input[type="number"],
-  input[type="search"],
-  textarea {
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  textarea,
+  select {
     font-size: 16px !important;
-  }
-}
-
-/* Mobil için gelişmiş dokunma hedefi boyutları */
-@media (max-width: 768px) {
-  a, button, [role="button"], 
-  input[type="submit"],
-  input[type="button"] {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 12px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Mobil menü öğeleri için özel stil */
-  .mobile-menu-item {
-    padding: 12px 16px;
-    margin: 4px 0;
-    border-radius: 8px;
-    transition: background-color 0.2s ease;
+    max-height: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 }

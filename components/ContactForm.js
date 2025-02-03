@@ -50,6 +50,7 @@ export default function ContactForm() {
           <input
             type="text"
             required
+            inputMode="text"
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
             value={formData.name}
             onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -60,6 +61,7 @@ export default function ContactForm() {
           <input
             type="email"
             required
+            inputMode="email"
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
             value={formData.email}
             onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -70,6 +72,7 @@ export default function ContactForm() {
           <input
             type="text"
             required
+            inputMode="text"
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
             value={formData.subject}
             onChange={(e) => setFormData({...formData, subject: e.target.value})}

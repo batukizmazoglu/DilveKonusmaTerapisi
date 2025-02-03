@@ -71,6 +71,7 @@ export default function BlogPage() {
                       src={post.imageUrl}
                       alt={post.title}
                       fill
+                      loading="lazy"
                       className="object-cover transform hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
