@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
@@ -70,11 +69,8 @@ export default function SSS() {
 
           <div className="max-w-3xl mx-auto space-y-4">
             {faqData.map((faq, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
                 className="bg-white rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 border border-[#B3BF88]/20 overflow-hidden"
               >
                 <button
@@ -83,7 +79,7 @@ export default function SSS() {
                 >
                   <span className="text-lg font-medium text-[#0D0D0D]">{faq.question}</span>
                   <svg
-                    className={`w-6 h-6 transform transition-transform duration-200 text-[#96A65B] ${
+                    className={`w-6 h-6 transition-transform duration-200 text-[#96A65B] ${
                       openQuestion === index ? 'rotate-180' : ''
                     }`}
                     fill="none"
@@ -98,20 +94,16 @@ export default function SSS() {
                     />
                   </svg>
                 </button>
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: openQuestion === index ? 'auto' : 0,
-                    opacity: openQuestion === index ? 1 : 0
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    openQuestion === index ? 'max-h-96' : 'max-h-0'
+                  }`}
                 >
                   <div className="px-6 py-4 bg-[#F2F2F2]/30 border-t border-[#B3BF88]/20">
                     <p className="text-[#0D0D0D]/70">{faq.answer}</p>
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -128,7 +120,7 @@ export default function SSS() {
               Merak ettiğiniz diğer konular için bizimle iletişime geçebilirsiniz.
             </p>
             <WhatsAppButton 
-              phoneNumber="+905555555555"
+              phoneNumber="+90 533 889 21 41"
               message="Merhaba, bir sorum var."
               className="btn-primary"
             />

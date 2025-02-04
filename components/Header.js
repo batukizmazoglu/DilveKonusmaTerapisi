@@ -21,7 +21,7 @@ export default function Header() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-primary-600">TalyaDKT</span>
+              <span className="text-2xl font-bold text-primary-600">Talya Azmidolu DKM</span>
             </Link>
           </div>
 

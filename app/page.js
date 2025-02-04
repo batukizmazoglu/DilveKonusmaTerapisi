@@ -46,8 +46,8 @@ export default function Home() {
   ];
 
   const socialLinks = {
-    facebook: 'https://facebook.com/talyadkt',
-    instagram: 'https://instagram.com/talyadkt'
+    facebook: 'https://www.facebook.com/profile.php?id=61552422890492&locale=tr_TR',
+    instagram: 'https://www.instagram.com/dkttalyaazmidolu/'
   };
 
   const blogPosts = [
@@ -99,7 +99,7 @@ export default function Home() {
             <div className="container">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-gray-900">
-                  <span className="block">Uzman Dil ve</span>
+                  <span className="block">Dil ve</span>
                   <span className="block text-primary-600">Konuşma Terapisti</span>
                 </h1>
                 <p className="mt-6 text-lg text-gray-600 md:text-xl">
@@ -107,7 +107,7 @@ export default function Home() {
                 </p>
                 <div className="mt-10 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
                   <WhatsAppCallButton 
-                    phoneNumber="+905555555555"
+                    phoneNumber="+90 533 889 21 41"
                     message="Merhaba, randevu almak istiyorum."
                     className="btn-primary"
                   />
@@ -126,7 +126,7 @@ export default function Home() {
                 <div className="relative aspect-square w-full max-w-md mx-auto">
                   <Image
                     src="/images/profile.jpg"
-                    alt="Uzman Dil ve Konuşma Terapisti"
+                    alt="Dil ve Konuşma Terapisti"
                     fill
                     className="object-cover rounded-lg shadow-lg"
                     priority
@@ -134,7 +134,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold text-gray-900">
-                    Merhaba, Ben Uzm. DKT Talya
+                    Merhaba, Ben Dkt. Talya Azmidolu
                   </h2>
                   <div className="prose text-gray-600">
                     <p>
@@ -275,7 +275,7 @@ export default function Home() {
                 </div>
                 <div className="mt-8 lg:mt-0 lg:flex-shrink-0">
                   <WhatsAppCallButton 
-                    phoneNumber="+905555555555"
+                    phoneNumber="+90 533 889 21 41"
                     message="Merhaba, bilgi almak istiyorum."
                     className="btn-primary"
                   />
@@ -369,7 +369,7 @@ export default function Home() {
             </div>
           </section>
 
-          <WhatsAppButton phoneNumber="+905555555555" message="Merhaba, bilgi almak istiyorum." />
+          <WhatsAppButton phoneNumber="+90 533 889 21 41" message="Merhaba, bilgi almak istiyorum." />
         </main>
       </motion.div>
     </>

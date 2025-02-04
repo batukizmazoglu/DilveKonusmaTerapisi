@@ -6,35 +6,35 @@ import { motion } from 'framer-motion';
 const services = [
   {
     id: 1,
-    title: 'Bireysel Terapi',
-    description: 'Kişisel gelişim ve ruh sağlığı sorunlarınızla başa çıkmanıza yardımcı olan birebir terapi seansları.',
+    title: 'Çocuklarda Dil ve Konuşma Terapisi',
+    description: 'Çocuklarda görülen dil ve konuşma bozukluklarının değerlendirilmesi ve tedavisi.',
     price: '800 TL/Seans',
-    duration: '50 Dakika',
-    icon: '👤'
+    duration: '45 Dakika',
+    icon: '👶'
   },
   {
     id: 2,
-    title: 'Çift Terapisi',
-    description: 'İlişkinizi güçlendirmek ve sorunları çözmek için profesyonel destek.',
-    price: '1000 TL/Seans',
-    duration: '60 Dakika',
+    title: 'Yetişkinlerde Konuşma Terapisi',
+    description: 'Yetişkinlerde görülen konuşma bozuklukları ve ses problemlerinin tedavisi.',
+    price: '800 TL/Seans',
+    duration: '45 Dakika',
     icon: '👥'
   },
   {
     id: 3,
-    title: 'Online Terapi',
-    description: 'Evinizin rahatlığında online platformlar üzerinden terapi hizmeti.',
-    price: '700 TL/Seans',
+    title: 'Yutma Terapisi',
+    description: 'Yutma güçlüğü yaşayan hastalara özel terapi programları.',
+    price: '800 TL/Seans',
     duration: '45 Dakika',
-    icon: '💻'
+    icon: '🍽️'
   },
   {
     id: 4,
-    title: 'Grup Terapisi',
-    description: 'Benzer sorunları yaşayan kişilerle birlikte iyileşme yolculuğu.',
-    price: '500 TL/Seans',
-    duration: '90 Dakika',
-    icon: '👥'
+    title: 'Ses Terapisi',
+    description: 'Ses kısıklığı ve ses bozuklukları için özel terapi programları.',
+    price: '800 TL/Seans',
+    duration: '45 Dakika',
+    icon: '🎤'
   }
 ];
 

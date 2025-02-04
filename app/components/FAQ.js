@@ -38,22 +38,19 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-2xl mx-auto space-y-3">
           {faqData.map((faq, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-white rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 border border-[#B3BF88]/20 overflow-hidden"
+              className="bg-white rounded-lg shadow-soft hover:shadow-md transition-all duration-300 border border-[#B3BF88]/20 overflow-hidden"
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-[#B3BF88]/5 transition-colors duration-200"
+                className="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-[#B3BF88]/5 transition-colors duration-200"
               >
-                <span className="text-lg font-medium text-[#0D0D0D]">{faq.question}</span>
+                <span className="text-base font-medium text-[#0D0D0D]">{faq.question}</span>
                 <svg
-                  className={`w-6 h-6 transform transition-transform duration-200 text-[#96A65B] ${
+                  className={`w-5 h-5 transition-transform duration-200 text-[#96A65B] ${
                     openQuestion === index ? 'rotate-180' : ''
                   }`}
                   fill="none"
@@ -68,30 +65,26 @@ export default function FAQ() {
                   />
                 </svg>
               </button>
-              <motion.div
-                initial={false}
-                animate={{
-                  height: openQuestion === index ? 'auto' : 0,
-                  opacity: openQuestion === index ? 1 : 0
-                }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openQuestion === index ? 'max-h-72' : 'max-h-0'
+                }`}
               >
-                <div className="px-6 py-4 bg-[#F2F2F2]/30 border-t border-[#B3BF88]/20">
-                  <p className="text-[#0D0D0D]/70">{faq.answer}</p>
+                <div className="px-4 py-3 bg-[#F2F2F2]/30 border-t border-[#B3BF88]/20">
+                  <p className="text-[#0D0D0D]/70 text-sm">{faq.answer}</p>
                 </div>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
           <Link 
             href="/sss" 
-            className="inline-flex items-center px-8 py-4 rounded-full bg-[#96A65B] text-white hover:bg-[#B3BF88] transition-colors duration-300 shadow-md hover:shadow-lg"
+            className="btn-secondary inline-flex items-center"
           >
             <span>Tüm Soruları Görüntüle</span>
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
             </svg>
           </Link>

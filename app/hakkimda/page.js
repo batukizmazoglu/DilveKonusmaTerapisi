@@ -13,7 +13,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold text-[#0D0D0D]">
-                Uzm. Dkt. [İsim Soyisim]
+                Dkt. Talya Azmidolu
               </h1>
               <p className="text-xl text-[#96A65B]">
                 Dil ve Konuşma Terapisti
