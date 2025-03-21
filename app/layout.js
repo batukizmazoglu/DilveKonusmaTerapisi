@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Talya Azmidolu Dil ve Konuşma Merkezi',
-  description: 'Dkt. Talya Azmidolu ile profesyonel dil ve konuşma terapisi hizmetleri',
+  title: 'Dil ve Konuşma Merkezi',
+  description: 'Profesyonel dil ve konuşma terapisi hizmetleri',
 };
 
 export const viewport = {

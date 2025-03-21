@@ -2,13 +2,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import WhatsAppCallButton from '@/components/WhatsAppCallButton';
 
 const services = [
   {
     id: 1,
     title: 'Çocuklarda Dil ve Konuşma Terapisi',
     description: 'Çocuklarda görülen dil ve konuşma bozukluklarının değerlendirilmesi ve tedavisi.',
-    price: '800 TL/Seans',
+    price: 'Güncel Fiyat Bilgisi İçin İletişime Geçiniz',
     duration: '45 Dakika',
     icon: '👶'
   },
@@ -16,7 +17,7 @@ const services = [
     id: 2,
     title: 'Yetişkinlerde Konuşma Terapisi',
     description: 'Yetişkinlerde görülen konuşma bozuklukları ve ses problemlerinin tedavisi.',
-    price: '800 TL/Seans',
+    price: 'Güncel Fiyat Bilgisi İçin İletişime Geçiniz',
     duration: '45 Dakika',
     icon: '👥'
   },
@@ -24,7 +25,7 @@ const services = [
     id: 3,
     title: 'Yutma Terapisi',
     description: 'Yutma güçlüğü yaşayan hastalara özel terapi programları.',
-    price: '800 TL/Seans',
+    price: 'Güncel Fiyat Bilgisi İçin İletişime Geçiniz',
     duration: '45 Dakika',
     icon: '🍽️'
   },
@@ -32,7 +33,7 @@ const services = [
     id: 4,
     title: 'Ses Terapisi',
     description: 'Ses kısıklığı ve ses bozuklukları için özel terapi programları.',
-    price: '800 TL/Seans',
+    price: 'Güncel Fiyat Bilgisi İçin İletişime Geçiniz',
     duration: '45 Dakika',
     icon: '🎤'
   }
@@ -89,9 +90,11 @@ export default function ServicesPage() {
             <p className="text-[#0D0D0D]/70 mb-8">
               Ücretsiz ön değerlendirme için bizimle iletişime geçin.
             </p>
-            <button className="btn-primary">
-              Randevu Alın
-            </button>
+            <WhatsAppCallButton 
+              phoneNumber="+90 500 000 00 00"
+              message="Merhaba, randevu almak istiyorum."
+              className="btn-primary"
+            />
           </div>
         </div>
       </section>

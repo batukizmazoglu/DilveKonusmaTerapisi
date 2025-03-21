@@ -34,20 +34,20 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: 'Ayşe Y.',
+      name: 'Bir Veli',
       text: 'Oğlumun konuşma problemleri için aldığımız terapi sonuçları muhteşem. Artık çok daha rahat iletişim kurabiliyor.',
       role: 'Veli',
     },
     {
-      name: 'Mehmet K.',
+      name: 'Bir Hasta',
       text: 'Kekemelik sorunum için aldığım terapi hayatımı değiştirdi. Artık kendimi çok daha rahat ifade edebiliyorum.',
       role: 'Hasta',
     },
   ];
 
   const socialLinks = {
-    facebook: 'https://www.facebook.com/profile.php?id=61552422890492&locale=tr_TR',
-    instagram: 'https://www.instagram.com/dkttalyaazmidolu/'
+    facebook: 'https://www.facebook.com/',
+    instagram: 'https://www.instagram.com/dilvekonusmaterapi/'
   };
 
   const blogPosts = [
@@ -107,7 +107,7 @@ export default function Home() {
                 </p>
                 <div className="mt-10 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
                   <WhatsAppCallButton 
-                    phoneNumber="+90 533 889 21 41"
+                    phoneNumber="+90 500 000 00 00"
                     message="Merhaba, randevu almak istiyorum."
                     className="btn-primary"
                   />
@@ -134,11 +134,11 @@ export default function Home() {
                 </div>
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold text-gray-900">
-                    Merhaba, Ben Dkt. Talya Azmidolu
+                    Merhaba, Ben Dkt.
                   </h2>
                   <div className="prose text-gray-600">
                     <p>
-                      Hacettepe Üniversitesi Dil ve Konuşma Terapisi bölümünden mezun olduktan sonra, çocuk ve yetişkinlerde görülen dil, konuşma ve yutma bozuklukları üzerine uzmanlaştım. 5 yılı aşkın klinik deneyimimle, her vakaya özel yaklaşım geliştirerek en etkili terapi yöntemlerini uyguluyorum.
+                      Dil ve Konuşma Terapisi bölümünden mezun olduktan sonra, çocuk ve yetişkinlerde görülen dil, konuşma ve yutma bozuklukları üzerine uzmanlaştım. 5 yılı aşkın klinik deneyimimle, her vakaya özel yaklaşım geliştirerek en etkili terapi yöntemlerini uyguluyorum.
                     </p>
                     <p>
                       Özellikle pediatrik dil ve konuşma bozuklukları alanında uzmanlaşmış olmakla birlikte, yetişkinlerde görülen ses bozuklukları ve yutma problemleri konusunda da kapsamlı tedavi hizmetleri sunmaktayım.
@@ -275,7 +275,7 @@ export default function Home() {
                 </div>
                 <div className="mt-8 lg:mt-0 lg:flex-shrink-0">
                   <WhatsAppCallButton 
-                    phoneNumber="+90 533 889 21 41"
+                    phoneNumber="+90 500 000 00 00"
                     message="Merhaba, bilgi almak istiyorum."
                     className="btn-primary"
                   />
@@ -369,7 +369,7 @@ export default function Home() {
             </div>
           </section>
 
-          <WhatsAppButton phoneNumber="+90 533 889 21 41" message="Merhaba, bilgi almak istiyorum." />
+          <WhatsAppButton phoneNumber="+90 500 000 00 00" message="Merhaba, bilgi almak istiyorum." />
         </main>
       </motion.div>
     </>

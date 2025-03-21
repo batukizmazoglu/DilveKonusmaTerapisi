@@ -8,7 +8,7 @@ const successStories = [
   {
     id: 1,
     title: 'Konuşma Güçlüğünü Aşan Minik Kahraman',
-    description: 'Ali, 5 yaşında konuşma güçlüğü yaşayan bir çocuktu. 6 aylık terapi sürecinin sonunda akıcı konuşmaya başladı.',
+    description: '5 yaşında konuşma güçlüğü yaşayan bir çocuk, 6 aylık terapi sürecinin sonunda akıcı konuşmaya başladı.',
     category: 'Çocuk Terapisi',
     duration: '6 Ay',
     icon: '🌟'
@@ -16,7 +16,7 @@ const successStories = [
   {
     id: 2,
     title: 'Kekemeliği Yenen Genç',
-    description: 'Ayşe, 16 yaşında kekemelik problemi yaşıyordu. Terapi sonrası özgüvenli bir şekilde konuşmaya başladı.',
+    description: '16 yaşında kekemelik problemi yaşayan bir genç, terapi sonrası özgüvenli bir şekilde konuşmaya başladı.',
     category: 'Kekemelik Terapisi',
     duration: '8 Ay',
     icon: '💫'
@@ -24,7 +24,7 @@ const successStories = [
   {
     id: 3,
     title: 'Ses Problemini Aşan Öğretmen',
-    description: 'Mehmet öğretmen, ses tellerindeki yorgunluk nedeniyle zorluk yaşıyordu. Ses terapisi ile mesleğine sorunsuz devam ediyor.',
+    description: 'Ses tellerindeki yorgunluk nedeniyle zorluk yaşayan bir öğretmen, ses terapisi ile mesleğine sorunsuz devam ediyor.',
     category: 'Ses Terapisi',
     duration: '3 Ay',
     icon: '🎯'

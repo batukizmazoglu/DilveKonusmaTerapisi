@@ -120,7 +120,7 @@ export default function SSS() {
               Merak ettiğiniz diğer konular için bizimle iletişime geçebilirsiniz.
             </p>
             <WhatsAppButton 
-              phoneNumber="+90 533 889 21 41"
+              phoneNumber="+90 500 000 00 00"
               message="Merhaba, bir sorum var."
               className="btn-primary"
             />

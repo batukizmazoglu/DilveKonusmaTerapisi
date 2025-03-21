@@ -1,6 +1,6 @@
 {
-  "name": "Talya Azmidolu Dil ve Konuşma Merkezi",
-  "short_name": "Talya Azmidolu DKM",
+  "name": "Dil ve Konuşma Merkezi",
+  "short_name": "DKM",
   "description": "Dil ve Konuşma Terapisi",
   "start_url": "/",
   "display": "standalone",

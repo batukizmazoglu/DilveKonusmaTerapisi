@@ -36,15 +36,15 @@ export default function ContactPage() {
                 <div className="grid gap-8">
                   <div className="flex flex-col">
                     <h3 className="text-lg font-semibold text-[#0D0D0D]/90 mb-2">Adres</h3>
-                    <p className="text-base text-[#0D0D0D]/70">Talya Azmidolu Dil ve Konuşma Merkezi, Lefkoşa, KKTC</p>
+                    <p className="text-base text-[#0D0D0D]/70">Dil ve Konuşma Merkezi, İstanbul</p>
                   </div>
                   <div className="flex flex-col">
                     <h3 className="text-lg font-semibold text-[#0D0D0D]/90 mb-2">Telefon</h3>
-                    <p className="text-base text-[#0D0D0D]/70">+90 (532) 123 45 67</p>
+                    <p className="text-base text-[#0D0D0D]/70">+90 (500) 000 00 00</p>
                   </div>
                   <div className="flex flex-col">
                     <h3 className="text-lg font-semibold text-[#0D0D0D]/90 mb-2">E-posta</h3>
-                    <p className="text-base text-[#0D0D0D]/70">info@psikolojikdanismanlik.com</p>
+                    <p className="text-base text-[#0D0D0D]/70">info@dilvekonusmamerkezi.com</p>
                   </div>
                   <div className="flex flex-col">
                     <h3 className="text-lg font-semibold text-[#0D0D0D]/90 mb-2">Çalışma Saatleri</h3>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                 className="w-full h-[450px] rounded-xl overflow-hidden shadow-soft hover:shadow-lg transition-all duration-300 border border-[#B3BF88]/20"
               >
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501.9949790875911!2d33.35598063300162!3d35.19858528821924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de17f0230c1241%3A0x13a8f9c67d28dd9b!2sTalya%20Azmidolu%20Dil%20ve%20Konu%C5%9Fma%20Merkezi!5e1!3m2!1str!2s!4v1738610134358!5m2!1str!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501.9949790875911!2d33.35598063300162!3d35.19858528821924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDExJzU0LjkiTiAzM8KwMjEnMjIuMCJF!5e1!3m2!1str!2s!4v1738610134358!5m2!1str!2s"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
