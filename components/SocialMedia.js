@@ -11,13 +11,30 @@ export default function SocialMedia({ links }) {
       </svg>
     )
   };
+'use client';
+
+import { motion } from 'framer-motion';
 
   return (
-    <div className="flex space-x-4">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="flex space-x-4"
+    >
       {Object.entries(links).map(([platform, url]) => (
         url && (
-          <a
+          <motion.a
             key={platform}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            whileHover={{ 
+              scale: 1.2,
+              y: -2,
+              transition: { duration: 0.2 }
+            }}
+            whileTap={{ scale: 0.9 }}
             href={url}
             target="_blank"
             rel="noopener noreferrer"
@@ -25,9 +42,9 @@ export default function SocialMedia({ links }) {
             aria-label={`${platform} sayfamızı ziyaret edin`}
           >
             {socialIcons[platform.toLowerCase()]}
-          </a>
+          </motion.a>
         )
       ))}
-    </div>
+    </motion.div>
   );
 } 

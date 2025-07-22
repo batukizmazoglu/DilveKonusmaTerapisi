@@ -95,27 +95,96 @@ export default function Home() {
       >
         <main className="space-y-0">
           {/* Hero Section */}
-          <section className="relative bg-gradient-to-br from-[#B3BF88] via-[#96A65B] to-[#F2D43D] section overflow-hidden">
+          <motion.section 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative bg-gradient-to-br from-[#B3BF88] via-[#96A65B] to-[#F2D43D] section overflow-hidden"
+          >
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#96A65B]/90 via-[#B3BF88]/80 to-[#F2D43D]/70"></div>
             
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#F2D43D]/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl animate-pulse delay-500"></div>
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{ 
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"
+              ></motion.div>
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.2, 0.4, 0.2]
+                }}
+                transition={{ 
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2
+                }}
+                className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#F2D43D]/20 rounded-full blur-3xl"
+              ></motion.div>
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.15, 1],
+                  opacity: [0.1, 0.3, 0.1]
+                }}
+                transition={{ 
+                  duration: 12,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 4
+                }}
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl"
+              ></motion.div>
             </div>
             
             <div className="container">
               <div className="max-w-4xl mx-auto text-center relative z-10">
-                <h1 className="text-white drop-shadow-lg">
-                  <span className="block">Dil ve</span>
-                  <span className="block text-white">Konuşma Terapisti</span>
-                </h1>
-                <p className="mt-6 text-lg text-white/90 md:text-xl drop-shadow-md">
+                <motion.h1 
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="text-white drop-shadow-lg"
+                >
+                  <motion.span 
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="block"
+                  >
+                    Dil ve
+                  </motion.span>
+                  <motion.span 
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    className="block text-white"
+                  >
+                    Konuşma Terapisti
+                  </motion.span>
+                </motion.h1>
+                <motion.p 
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="mt-6 text-lg text-white/90 md:text-xl drop-shadow-md"
+                >
                   Dil, konuşma ve yutma bozukluklarının tedavisinde uzmanlaşmış klinik deneyimi ile yanınızdayız.
-                </p>
-                <div className="mt-10 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
+                </motion.p>
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1 }}
+                  className="mt-10 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center"
+                >
                   <WhatsAppCallButton 
                     phoneNumber="+90 500 000 00 00"
                     message="Merhaba, randevu almak istiyorum."
@@ -124,16 +193,28 @@ export default function Home() {
                   <Link href="/hizmetler" className="btn-secondary bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-[#96A65B] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                     Hizmetlerimiz
                   </Link>
-                </div>
+                </motion.div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* About Section */}
-          <section className="section bg-white">
+          <motion.section 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="section bg-white"
+          >
             <div className="container">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="relative aspect-square w-full max-w-md mx-auto">
+                <motion.div 
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="relative aspect-square w-full max-w-md mx-auto"
+                >
                   <Image
                     src="/images/profile.jpg"
                     alt="Dil ve Konuşma Terapisti"
@@ -141,45 +222,104 @@ export default function Home() {
                     className="object-cover rounded-lg shadow-lg"
                     priority
                   />
-                </div>
-                <div className="space-y-6">
-                  <h2 className="text-3xl font-bold text-gray-900">
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="space-y-6"
+                >
+                  <motion.h2 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="text-3xl font-bold text-gray-900"
+                  >
                     Merhaba, Ben Dkt.
-                  </h2>
+                  </motion.h2>
                   <div className="prose text-gray-600">
-                    <p>
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                      viewport={{ once: true }}
+                    >
                       Dil ve Konuşma Terapisi bölümünden mezun olduktan sonra, çocuk ve yetişkinlerde görülen dil, konuşma ve yutma bozuklukları üzerine uzmanlaştım. 5 yılı aşkın klinik deneyimimle, her vakaya özel yaklaşım geliştirerek en etkili terapi yöntemlerini uyguluyorum.
-                    </p>
-                    <p>
+                    </motion.p>
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      viewport={{ once: true }}
+                    >
                       Özellikle pediatrik dil ve konuşma bozuklukları alanında uzmanlaşmış olmakla birlikte, yetişkinlerde görülen ses bozuklukları ve yutma problemleri konusunda da kapsamlı tedavi hizmetleri sunmaktayım.
-                    </p>
+                    </motion.p>
                   </div>
-                  <Link href="/hakkimda" className="btn-secondary inline-flex items-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <Link href="/hakkimda" className="btn-secondary inline-flex items-center hover:scale-105 transition-transform duration-200">
                     Daha Fazlası
                     <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                     </svg>
-                  </Link>
-                </div>
+                    </Link>
+                  </motion.div>
+                </motion.div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* Services Section */}
-          <section className="section bg-white">
+          <motion.section 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="section bg-white"
+          >
             <div className="container">
               <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-gray-900">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="text-gray-900"
+                >
                   Hizmetlerimiz
-                </h2>
-                <p className="mt-4 text-gray-600">
+                </motion.h2>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="mt-4 text-gray-600"
+                >
                   Uzman kadromuz ile size özel terapi programları sunuyoruz
-                </p>
+                </motion.p>
               </div>
 
-              <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              <motion.div 
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+              >
                 {services.map((service) => (
-                  <div key={service.title} className="card group">
+                  <motion.div 
+                    key={service.title} 
+                    variants={fadeInUp}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                    className="card group cursor-pointer"
+                  >
                     <div className="text-5xl mb-6">{service.icon}</div>
                     <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
                       <Link href="/hizmetler" className="block">
@@ -189,26 +329,51 @@ export default function Home() {
                     <p className="mt-3 text-gray-600">
                       {service.description}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
-          </section>
+          </motion.section>
 
           {/* Neden Biz Section */}
-          <section className="section bg-gradient-to-b from-white to-gray-50">
+          <motion.section 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="section bg-gradient-to-b from-white to-gray-50"
+          >
             <div className="container">
               <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-gray-900">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="text-gray-900"
+                >
                   Neden Biz?
-                </h2>
-                <p className="mt-4 text-gray-600">
+                </motion.h2>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="mt-4 text-gray-600"
+                >
                   Size özel, bilimsel ve etkili terapi yaklaşımımız
-                </p>
+                </motion.p>
               </div>
 
               <div className="mt-12 grid gap-8 sm:grid-cols-2">
-                <div className="card group hover:-translate-y-1 transition-all duration-300">
+                <motion.div 
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="card group cursor-pointer"
+                >
                   <div className="flex items-center mb-4">
                     <span className="text-2xl text-primary-600 mr-3">✔️</span>
                     <h3 className="text-xl font-semibold text-gray-900">
@@ -218,9 +383,16 @@ export default function Home() {
                   <p className="text-gray-600">
                     Her danışanımız için özel olarak tasarlanmış, kişiye özgü terapi planları oluşturuyoruz.
                   </p>
-                </div>
+                </motion.div>
 
-                <div className="card group hover:-translate-y-1 transition-all duration-300">
+                <motion.div 
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="card group cursor-pointer"
+                >
                   <div className="flex items-center mb-4">
                     <span className="text-2xl text-primary-600 mr-3">✔️</span>
                     <h3 className="text-xl font-semibold text-gray-900">
@@ -230,25 +402,51 @@ export default function Home() {
                   <p className="text-gray-600">
                     Güncel bilimsel araştırmalara dayalı, kanıta dayalı terapi yöntemleri uyguluyoruz.
                   </p>
-                </div>
+                </motion.div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* Testimonials Section */}
-          <section className="section bg-gray-50">
+          <motion.section 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="section bg-gray-50"
+          >
             <div className="container">
               <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-gray-900">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="text-gray-900"
+                >
                   Hasta Yorumları
-                </h2>
-                <p className="mt-4 text-gray-600">
+                </motion.h2>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="mt-4 text-gray-600"
+                >
                   Başarı hikayelerimizden bazıları
-                </p>
+                </motion.p>
               </div>
               <div className="mt-16 grid gap-8 md:grid-cols-2 lg:gap-12">
-                {testimonials.map((testimonial) => (
-                  <div key={testimonial.name} className="card">
+                {testimonials.map((testimonial, index) => (
+                  <motion.div 
+                    key={testimonial.name} 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    className="card cursor-pointer"
+                  >
                     <div className="flex flex-col h-full">
                       <blockquote className="flex-1">
                         <p className="text-lg text-gray-600 italic">&ldquo;{testimonial.text}&rdquo;</p>
@@ -262,37 +460,67 @@ export default function Home() {
                         </div>
                       </footer>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* SSS Bölümü */}
           <FAQ />
 
           {/* CTA Section */}
-          <section className="section bg-secondary-50">
+          <motion.section 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="section bg-secondary-50"
+          >
             <div className="container">
               <div className="lg:flex lg:items-center lg:justify-between">
-                <div className="max-w-xl">
-                  <h2 className="text-3xl font-bold tracking-tight text-primary-700 sm:text-4xl">
+                <motion.div 
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="max-w-xl"
+                >
+                  <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="text-3xl font-bold tracking-tight text-primary-700 sm:text-4xl"
+                  >
                     Profesyonel Yardıma mı İhtiyacınız Var?
-                  </h2>
-                  <p className="mt-3 text-lg text-secondary-700">
+                  </motion.h2>
+                  <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    className="mt-3 text-lg text-secondary-700"
+                  >
                     Hemen WhatsApp üzerinden iletişime geçin.
-                  </p>
-                </div>
-                <div className="mt-8 lg:mt-0 lg:flex-shrink-0">
+                  </motion.p>
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="mt-8 lg:mt-0 lg:flex-shrink-0"
+                >
                   <WhatsAppCallButton 
                     phoneNumber="+90 500 000 00 00"
                     message="Merhaba, bilgi almak istiyorum."
                     className="btn-primary"
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* Öne Çıkan Blog Yazıları */}
           <section className="section bg-white">
@@ -368,16 +596,36 @@ export default function Home() {
           </section>
 
           {/* Sosyal Medya Bölümü */}
-          <section className="py-12">
+          <motion.section 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="py-12"
+          >
             <div className="container mx-auto px-4">
               <div className="mt-8 text-center">
-                <h3 className="text-xl font-semibold mb-4">Sosyal Medya</h3>
-                <div className="flex justify-center">
+                <motion.h3 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="text-xl font-semibold mb-4"
+                >
+                  Sosyal Medya
+                </motion.h3>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="flex justify-center"
+                >
                   <SocialMedia links={socialLinks} />
-                </div>
+                </motion.div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
           <WhatsAppButton phoneNumber="+90 500 000 00 00" message="Merhaba, bilgi almak istiyorum." />
         </main>

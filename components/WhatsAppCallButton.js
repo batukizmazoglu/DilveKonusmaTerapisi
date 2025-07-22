@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function WhatsAppCallButton({ phoneNumber, message, className }) {
   const handleClick = () => {
     const formattedPhone = phoneNumber.replace(/\D/g, '');
@@ -8,11 +10,14 @@ export default function WhatsAppCallButton({ phoneNumber, message, className }) 
   };
 
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ duration: 0.2 }}
       onClick={handleClick}
       className={className}
     >
       WhatsApp ile İletişime Geç
-    </button>
+    </motion.button>
   );
 } 
