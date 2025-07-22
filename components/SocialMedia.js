@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function SocialMedia({ links }) {
   const socialIcons = {
     facebook: (
@@ -11,9 +15,6 @@ export default function SocialMedia({ links }) {
       </svg>
     )
   };
-'use client';
-
-import { motion } from 'framer-motion';
 
   return (
     <motion.div 
@@ -47,4 +48,4 @@ import { motion } from 'framer-motion';
       ))}
     </motion.div>
   );
-} 
+}
