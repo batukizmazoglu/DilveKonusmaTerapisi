@@ -95,23 +95,33 @@ export default function Home() {
       >
         <main className="space-y-0">
           {/* Hero Section */}
-          <section className="relative bg-gradient-to-b from-primary-50 to-white section">
+          <section className="relative bg-gradient-to-br from-[#B3BF88] via-[#96A65B] to-[#F2D43D] section overflow-hidden">
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#96A65B]/90 via-[#B3BF88]/80 to-[#F2D43D]/70"></div>
+            
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#F2D43D]/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl animate-pulse delay-500"></div>
+            </div>
+            
             <div className="container">
-              <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-gray-900">
+              <div className="max-w-4xl mx-auto text-center relative z-10">
+                <h1 className="text-white drop-shadow-lg">
                   <span className="block">Dil ve</span>
-                  <span className="block text-primary-600">Konuşma Terapisti</span>
+                  <span className="block text-white">Konuşma Terapisti</span>
                 </h1>
-                <p className="mt-6 text-lg text-gray-600 md:text-xl">
+                <p className="mt-6 text-lg text-white/90 md:text-xl drop-shadow-md">
                   Dil, konuşma ve yutma bozukluklarının tedavisinde uzmanlaşmış klinik deneyimi ile yanınızdayız.
                 </p>
                 <div className="mt-10 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
                   <WhatsAppCallButton 
                     phoneNumber="+90 500 000 00 00"
                     message="Merhaba, randevu almak istiyorum."
-                    className="btn-primary"
+                    className="btn-primary shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                   />
-                  <Link href="/hizmetler" className="btn-secondary">
+                  <Link href="/hizmetler" className="btn-secondary bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-[#96A65B] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                     Hizmetlerimiz
                   </Link>
                 </div>
